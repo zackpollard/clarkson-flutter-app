@@ -2,8 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:clarkson/fillup_detail_page.dart';
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'app_navigation.dart';
 import 'login_page.dart';
 
 void main() => runApp(MyApp());
@@ -11,7 +12,8 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   final routes = <String, WidgetBuilder>{
     LoginPage.tag: (context) => LoginPage(),
-    HomePage.tag: (context) => HomePage(),
+    AppNavigation.tag: (context) => AppNavigation(),
+    FillUpDetailPage.tag: (context) => FillUpDetailPage()
   };
 
   @override
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(          // Add the 3 lines from here...
         primaryColor: Colors.white
       ),
-        home: LoginPage(),
+        home: AppNavigation(),
         routes: routes,
     );
   }
